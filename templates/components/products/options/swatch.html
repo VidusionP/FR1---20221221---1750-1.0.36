@@ -1,29 +1,125 @@
 <style>
     .form-option-image2 {
-        width:80px; 
-        height: 80px;
+        width:80px !important; 
+        height: 80px !important;
+    }
+    .form-image-box {
+            width: 200px !important;
+            height: 200px !important;
+            box-shadow:-2px 3px 5px 2px rgba(0, 0, 0, 0.493);
+            box-sizing: content-box;
+        }
+        .form-image-expanded {
+            width: 100% !important;
+            height: 100% !important;
+        }
+    @media (max-width:377px) {
+        .swatchBlock:nth-child(3n+1) .form-option-expanded{
+        left: unset !important;
+        right: 20px !important;
+    }
+    }
+    @media (min-width:378px) {
+        .swatchBlock:nth-child(3n+1) .form-option-expanded{
+        left: 20px !important;
+        right: unset !important;
+         }
+        .swatchBlock:nth-child(4n+1) .form-option-expanded {
+        left: unset !important;
+        right: 20px !important;
+        }
+    }
+    @media (min-width: 465px) {
+        .swatchBlock:nth-child(4n+1) .form-option-expanded {
+        left: 20px;
+        right: unset;
+        }
+        .swatchBlock:nth-child(5n+1) .form-option-expanded {
+        left: unset;
+        right: 20px;
+        }
+    }
+    @media (min-width:552px) {
+        .swatchBlock:nth-child(5n+1) .form-option-expanded {
+
+        left: 20px;
+        right: unset;
+        }
+        .swatchBlock:nth-child(6n+1) .form-option-expanded {
+
+        left: unset;
+        right: 20px;
+        }
+    }
+    @media (min-width: 639) {
+        .swatchBlock:nth-child(6n+1) .form-option-expanded {
+
+        left: 20px !important;
+        right: unset !important;
+        }
+        .swatchBlock:nth-child(7n+1) .form-option-expanded {
+
+        left: unset !important;
+        right: 20px !important;
+        }
     }
     @media (min-width: 768px) {
+        .swatchBlock:nth-child(7n+1) .form-option-expanded {
+        left: 20px;
+        right: unset;
+        }
+        .swatchBlock:nth-child(5n+1) .form-option-expanded {
+        left: unset;
+        right: 20px;
+        }
+    }
+    @media (min-width: 920px) {
+        .swatchBlock .form-option-expanded {
+            left: 20px;
+            right: 20px;
+        }
+        .swatchBlock:nth-child(5n+1) .form-option-expanded {
+        left: 20px;
+        right: unset;
+        }
+        .swatchBlock:nth-child(2n+1) .form-option-expanded {
+        left: unset;
+        right: 20px;
+        }
+    }
+    @media (min-width: 1216px) {
+        .swatchBlock:nth-child(3n+1) .form-option-expanded {
+            
+        left: 20px!important;
+        right: unset!important;
+        }
+        .swatchBlock:nth-child(4n+1) .form-option-expanded {
+        left: unset!important;
+        right: 20px!important;
+        }
+    }
+
+    @media (min-width: 768px) {
         .form-option-image2 {
-            height: 120px;
-            width: 120px;
+            height: 120px !important;
+            width: 120px !important;
         }
     }
     @media (min-width: 920px) {
         .form-option-image2 {
-            height: 87px;
-            width: 87px;
+            height: 87px !important;
+            width: 87px !important;
         }
     }
     @media (min-width: 1261px) {
         .form-option-image2 {
-            height: 75px;
-            width: 75px;
+            height: 75px !important;
+            width: 75px !important;
         }
         .form-image-box {
-            width: 200px;
-            height: 200px;
-            box-shadow:-2px 3px 5px 2px rgba(0, 0, 0, 0.493);
+            width: 200px !important;
+            height: 200px !important;
+            box-shadow:-2px 3px 5px 2px rgba(0, 0, 0, 0.493) !important;
         }
         .form-image-expanded {
             width: 100% !important;
@@ -32,13 +128,13 @@
     }
     @media (min-width: 1500px) {
         .form-option-image2 {
-            height: 110px;
-            width: 110px;
+            height: 100px !important;
+            width: 100px !important;
         }
         .form-image-box {
-            width: 250px;
-            height: 250px;
-            box-shadow:-2px 3px 5px 2px rgba(0, 0, 0, 0.493);
+            width: 250px !important;
+            height: 250px !important;
+            box-shadow:-2px 3px 5px 2px rgba(0, 0, 0, 0.493) !important;
         }
     }
 </style>
@@ -68,10 +164,11 @@
     {{/unless}}
 
     {{#each this.values}}
+    <div style="display: inline-block;" class="swatchBlock">
         <input class="form-radio" type="radio" name="attribute[{{../id}}]" value="{{id}}" id="attribute_swatch_{{../id}}_{{id}}" {{#if selected}}checked data-default{{/if}} {{#if ../required}}required{{/if}} data-title="{{this.label}}" data-index="{{@index}}" aria-label="{{this.label}}">
         <label class="form-option form-option-swatch" for="attribute_swatch_{{../id}}_{{id}}" data-product-attribute-value="{{id}}">
             {{#if image}}
-                <span class='form-option-variant form-option-variant--pattern  form-option-image2' title="{{this.label}}" style="background-image: url('{{getImage image "swatch_option_size"}}'); background-size: contain;"></span>
+                <span class='form-option-variant form-option-variant--pattern  form-option-image2' title="{{this.label}}" style="background-image: url('{{getImage image "core-swatch"}}'); background-size: contain;"></span>
             {{/if}}
             {{#if data.[2]}}
                 <span class='form-option-variant form-option-variant--color form-option-variant--color2' title="{{this.label}}">
@@ -97,5 +194,6 @@
                 </span>
             {{/if}}
         </label>
+        </div>
     {{/each}}
 </div>

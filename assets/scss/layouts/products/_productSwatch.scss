@@ -56,8 +56,9 @@ $second_value : str-slice($value_of_swatch_size, $position_of_x + 1);
         &:hover{
             .form-option-expanded {
                 opacity: 1;
-                transform: translate(-50%, 0);
+                // transform: translate(-50%, 0);
                 visibility: visible;
+                left: 20px;
                 z-index: 5000;
             }
         }
@@ -65,7 +66,8 @@ $second_value : str-slice($value_of_swatch_size, $position_of_x + 1);
             // display: none;
             background-color: stencilColor("body-bg");
             border: 1px solid #dadada;
-            left: calc(100% + 5px);
+            // left: calc(100% + 5px);
+            left: 0;
             padding: 4px;
             position: absolute;
             top: calc(100% + 5px);
@@ -209,7 +211,7 @@ $second_value : str-slice($value_of_swatch_size, $position_of_x + 1);
             &:hover{
                 .form-option-expanded {
                     opacity: 1;
-                    transform: translate(-50%, 0);
+                    // transform: translate(-50%, 0);
                     visibility: visible;
                     z-index: 5000;
                 }
