@@ -1,0 +1,101 @@
+<style>
+    .form-option-image2 {
+        width:80px; 
+        height: 80px;
+    }
+    @media (min-width: 768px) {
+        .form-option-image2 {
+            height: 120px;
+            width: 120px;
+        }
+    }
+    @media (min-width: 920px) {
+        .form-option-image2 {
+            height: 87px;
+            width: 87px;
+        }
+    }
+    @media (min-width: 1261px) {
+        .form-option-image2 {
+            height: 75px;
+            width: 75px;
+        }
+        .form-image-box {
+            width: 200px;
+            height: 200px;
+            box-shadow:-2px 3px 5px 2px rgba(0, 0, 0, 0.493);
+        }
+        .form-image-expanded {
+            width: 100% !important;
+            height: 100% !important;
+        }
+    }
+    @media (min-width: 1500px) {
+        .form-option-image2 {
+            height: 110px;
+            width: 110px;
+        }
+        .form-image-box {
+            width: 250px;
+            height: 250px;
+            box-shadow:-2px 3px 5px 2px rgba(0, 0, 0, 0.493);
+        }
+    }
+</style>
+
+<div class="form-field" data-product-attribute="swatch" data-product-option-id="{{id}}">
+    <label class="form-label form-label--alternate form-label--inlineSmall">
+        {{this.display_name}}
+        {{> components/common/requireness-msg}}
+        <span data-option-value></span>
+    </label>
+
+    {{#unless required}}
+        <input
+            class="form-radio"
+            type="radio"
+            name="attribute[{{../id}}]"
+            value=""
+            id="attribute_swatch_{{../id}}_none"
+            checked="{{#if defaultValue '==' ''}}checked{{/if}}"
+            data-title="{{this.label}}"
+            data-index="{{@index}}"
+            aria-label="{{lang 'products.none'}}"
+        >
+        <label class="form-option form-option-swatch" for="attribute_swatch_{{../id}}_none">
+            <span class='form-option-variant form-option-variant--none' title="{{lang 'products.none'}}">{{lang 'products.none'}}</span>
+        </label>
+    {{/unless}}
+
+    {{#each this.values}}
+        <input class="form-radio" type="radio" name="attribute[{{../id}}]" value="{{id}}" id="attribute_swatch_{{../id}}_{{id}}" {{#if selected}}checked data-default{{/if}} {{#if ../required}}required{{/if}} data-title="{{this.label}}" data-index="{{@index}}" aria-label="{{this.label}}">
+        <label class="form-option form-option-swatch" for="attribute_swatch_{{../id}}_{{id}}" data-product-attribute-value="{{id}}">
+            {{#if image}}
+                <span class='form-option-variant form-option-variant--pattern  form-option-image2' title="{{this.label}}" style="background-image: url('{{getImage image "swatch_option_size"}}'); background-size: contain;"></span>
+            {{/if}}
+            {{#if data.[2]}}
+                <span class='form-option-variant form-option-variant--color form-option-variant--color2' title="{{this.label}}">
+                    <span style="background-color: #{{data.[0]}}"></span>
+                    <span style="background-color: #{{data.[1]}}"></span>
+                    <span style="background-color: #{{data.[2]}}"></span>
+                </span>
+            {{else}}
+                {{#if data.[1]}}
+                    <span class='form-option-variant form-option-variant--color form-option-variant--color2' title="{{this.label}}">
+                        <span style="background-color: #{{data.[0]}}"></span>
+                        <span style="background-color: #{{data.[1]}}"></span>
+                    </span>
+                {{else}}
+                    {{#if data.[0]}}
+                        <span class='form-option-variant form-option-variant--color' title="{{this.label}}" style="background-color: #{{data.[0]}}"></span>
+                    {{/if}}
+                {{/if}}
+            {{/if}}
+            {{#if pattern}}
+                <span class="form-option-expanded form-image-box">
+                    <span class="form-option-image form-image-expanded" style="background-image: url('{{getImage image 'core-swatch'}}');"></span>
+                </span>
+            {{/if}}
+        </label>
+    {{/each}}
+</div>

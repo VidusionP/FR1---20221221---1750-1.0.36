@@ -1,0 +1,729 @@
+<style>
+    .slick-tiktok1 {
+        display: none;
+    }
+    .slick-tiktok1.slick-initialized {
+        display: block;
+    }
+    .slick-instagram1 {
+        display: none;
+    }
+    .slick-instagram1.slick-initialized {
+        display: block;
+    }
+    .r-test2{
+    display: none;
+  }
+  .r-test2.slick-initialized{
+    display: block;
+  }
+  .slick-tiktok1 .slick-list {
+    max-width: 400px;
+    margin: auto;
+  }
+  .slick-instagram1 .slick-list {
+    max-width: 400px;
+    margin: auto;
+  }
+  .instablock {
+    min-height: 520px;
+    height: 50vh;
+    max-height: 500px;
+    /* height: fit-content; */
+  }
+     .loadButton {
+    position: relative;
+    /* width: 100%; */
+    background-color: #f7c34a;
+    border-radius: 20px;
+    padding: 5px 20px;
+    width: 150px;
+    margin: 20px auto 0;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+
+    /* left: 50%;
+    transform: translate(-50%); */
+}
+  .v-video-modal {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100vw;
+                        height: 100vh;
+                        display: none;
+                        z-index: 99;
+
+                    }
+                    .v-video-modal.show {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-top: 40px;
+                    }
+                    .v-video-modal-overlay {
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        position: absolute;
+                        background-color: rgba(0, 0, 0, 0.90);
+                    }
+                    .v-video-modal-close {
+                        position: absolute;
+                        right: 0;
+                        top: -60px;
+                        width: 50px;
+                        height: 50px;
+                        cursor: pointer;
+                        z-index: 9;
+                        background-image: url("/content/images/marketing/reviewlanding/close.svg");
+                        background-repeat: no-repeat;
+                        background-position: center right;
+                        background-size: 20px 20px;
+                    }
+                    .v-video-modal-close img {
+                        object-position: center right;
+                    }
+                    .v-video-container {
+                        max-width: 90%;
+                        z-index: 99;
+                        position: relative;
+                    }
+                    .v-video-container iframe {
+                        max-width: 100%;
+                        /* max-height: 80%; */
+                    }
+    @media (min-width: 768px) {
+        .instablock {
+    min-height: 520px;
+    height: 60vh;
+    max-height: 600px;
+    width: 400px;
+  }
+    }
+  @media (min-width: 601px) {
+    .slick-tiktok1 .slick-list {
+        max-width: unset;
+        margin: auto;
+    }
+    .slick-instagram1 .slick-list {
+        max-width: unset;
+        margin: auto;
+    }
+  }
+
+@media (min-width: 1024px) {
+    .v-video-modal-close { 
+        top: 15px;
+        right: -30px;
+    }
+}
+</style>
+<div class="reviewSec">
+
+    <div class="r-block">
+        <h3 class="r-Title">Ce que les clients disent de nous</h3>
+        <div function="list-product" data-ids="619, 828, 647, 828, 626"></div>
+        <div id="reviewblock1" class=" reviewSlider r-testblock halo-block halo-block-icon-text padding-top-0 padding-bottom-0"
+            >
+    
+            <div class="r-item">
+                <input type = "hidden" class = "thingIWant" value = "619" />
+                <div>
+                    <div class="r-stars">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>    
+                    </div>
+                    <p class="r-para">"Change votre confiance en vous
+                        Vous sentirez une différence immédiate et je pense que cela change plus que mon apparence. Cela change votre confiance en vous."</p>
+                    <p class="r-name">Matty Leblanc</p>
+    
+                </div>
+    
+            </div>
+            <div class="r-item">
+                <input type = "hidden" class = "thingIWant" value = "828" />
+    
+                <div>
+                    <div class="r-stars">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>    
+                    </div>
+                    <p class="r-para">"J'adore cet unité
+                        Les cheveux sont incroyables, je ne les sens pas sur ma tête. Je vais continuer à utiliser cet unité. J'en ai essayé d'autres et celui-ci est mon préférée."</p>
+                    <p class="r-name">Rick Douglas</p>
+                </div>
+            </div>
+            <div class="r-item">
+                <input type = "hidden" class = "thingIWant" value = "647" />
+    
+                <div>
+                    <div class="r-stars">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star-half-o checked"></span>    
+                    </div>
+                    <p class="r-para">"Cela me redonne confiance
+                        Utiliser un complément capillaire de Superhairpieces me donne un sentiment de plus grande confiance, ils sont super sûrs.
+                        Personne ne va le remarquer quand ils sont de bonne qualité."</p>
+                    <p class="r-name">Luis Porras</p>
+                </div>
+            </div>
+            <div class="r-item">
+                <input type = "hidden" class = "thingIWant" value = "828" />
+    
+                <div>
+                    <div class="r-stars">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>    
+                    </div>
+                    <p class="r-para">"incroyable !
+                        Je suis très heureux maintenant ! Il me donne toute la confiance du monde (non pas que je manquais) La qualité est incroyable !"</p>
+                    <p  class="r-name">Scott Henry</p>
+                </div>
+            </div>
+            <div class="r-item">
+                <input type = "hidden" class = "thingIWant" value = "626" />
+    
+                <div>
+                    <div class="r-stars">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star-half-o checked"></span>    
+                    </div>
+                    <p class="r-para">"Cheveux et perruques de qualité incroyable ! J'adore, adore, adore ce site et ils personnalisent pour n'importe quelle longueur ou taille. Le service client est également excellent."</p>
+                    <p class="r-name">Andrew Walton</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="r-arr1">
+        <div class="arr1" id="arr1"></div>
+        <div style="opacity: 0" class="r-show">Ver más</div>
+    </div>
+
+    <div class="r-block1">
+        <div class="r-block1Mobile">
+            <p style="opacity: 0;" class="r-para1">Ver más</p>
+            <h2 class="r-title1">Ce que les clients disent de nous</h2>
+            <div>
+                <div id="r-test3" class="r-test1 r-test10  reviewSlider" >
+                    <a target="_blank" class=r-item href="/m101-complement-capillaire-pour-hommes-en-polyurethane-de-0-2mm/">
+                        <div>
+                            <img src="https://cdn11.bigcommerce.com/s-1tqjsol232/images/stencil/200w/products/619/11215/M101FR___29553.1659039551.jpg">
+                        </div>
+                        <div>
+                            <div>
+                                <div class='vidujen1'></div>
+                                <div class=r-name style="-webkit-box-orient: vertical">M101 Complément Capillaire Pour Hommes En Polyuréthane De 0,2mm.</div>
+                                <div class=r-price>234,00€</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a target="_blank" class=r-item href="/hd111-complement-capillaire-pour-hommes-compose-en-polyurethane-le-plus-mince-de-0-04mm-jetable/">
+                        <div>
+                            <img src="https://cdn11.bigcommerce.com/s-1tqjsol232/images/stencil/200w/products/828/11534/HD111FR_Thumb__30069.1659468823.jpg">
+                        </div>
+                        <div>
+                            <div>
+                                <div class='vidujen1'></div>
+                                <div class=r-name style="-webkit-box-orient: vertical">HD111 Complément capillaire pour hommes composé en polyuréthane le plus mince de 0,04mm - Jetable</div>
+                                <div class=r-price>228,00€</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a target="_blank" class=r-item href="/m111-complement-capillaire-pour-hommes-compose-en-polyurethane-le-plus-mince-jetable/">
+                        <div>
+                            <img src="https://cdn11.bigcommerce.com/s-1tqjsol232/images/stencil/200w/products/647/11546/M111FR_Thumb__85552.1666101409.jpg">
+                        </div>
+                        <div>
+                            <div>
+                                <div class='vidujen1'></div>
+                                <div class=r-name style="-webkit-box-orient: vertical">M111 Complément capillaire pour hommes composé en polyuréthane le plus mince - Jetable</div>
+                                <div class=r-price>226,00€</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a target="_blank" class=r-item href="/hd111-complement-capillaire-pour-hommes-compose-en-polyurethane-le-plus-mince-de-0-04mm-jetable/">
+                        <div>
+                            <img src="https://cdn11.bigcommerce.com/s-1tqjsol232/images/stencil/200w/products/828/11534/HD111FR_Thumb__30069.1659468823.jpg">
+                        </div>
+                        <div>
+                            <div>
+                                <div class='vidujen1'></div>
+                                <div class=r-name style="-webkit-box-orient: vertical">HD111 Complément capillaire pour hommes composé en polyuréthane le plus mince de 0,04mm - Jetable</div>
+                                <div class=r-price>228,00€</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a target="_blank" class=r-item href="/m105-complement-capillaire-pour-hommes-compose-totalement-en-tulle-francais/">
+                        <div>
+                            <img src="https://cdn11.bigcommerce.com/s-1tqjsol232/images/stencil/200w/products/626/11369/M105FR__23937.1665068744.jpg">
+                        </div>
+                        <div>
+                            <div>
+                                <div class='vidujen1'></div>
+                                <div class=r-name style="-webkit-box-orient: vertical">M105 Complément capillaire pour hommes composé totalement en tulle français</div>
+                                <div class=r-price>366,00€</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div style="height: 80px;" id="gokuvidu6" class="arr4 arr1"></div>
+            <div class="loadButton"><a href="/avis-et-temoignages/"><font color="white">Ver más</font></a></div>
+        </div>
+        <div  class="bkg">
+            <div class="r-test2 reviewSlider" id="r-test2" 
+            >
+                <div class="r-imgBlock">
+                    <picture>
+                        <source media="(min-width:701px)" srcset="/content/images/homepage/matty.jpg" type="image/jpeg">
+                        <source  srcset="/content/images/homepage/matty.webp" type="image/webp">
+                        <img class="r-img" src="/content/images/homepage/matty.jpg">
+                    </picture>
+                    <div class="r-item r-itemTablet">
+                        <div class="r-itemTablet1">
+                            
+                            <p class="r-para">"Change votre confiance en vous
+                                Vous sentirez une différence immédiate et je pense que cela change plus que mon apparence. Cela change votre confiance en vous."</p>
+                                <div style="display: flex; justify-content:space-between;">
+                                    <p class="r-name">Matty Leblanc</p>
+                                    <div class="r-stars">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>    
+                                    </div>
+                                </div>
+            
+                        </div>
+            
+                    </div>
+                </div>
+                <div class="r-imgBlock">
+                    <picture>
+                        <source media="(min-width:701px)" data-lazy="/content/images/homepage/rick.jpg" type="image/jpeg">
+                        <source  data-lazy="/content/images/homepage/rick.webp" type="image/webp">
+                        <img class="r-img" data-lazy="/content/images/homepage/rick.jpg">
+                    </picture>
+                    <div class="r-item  r-itemTablet">
+            
+                        <div class="r-itemTablet1">
+                            
+                            <p class="r-para">"J'adore cet unité
+                                Les cheveux sont incroyables, je ne les sens pas sur ma tête. Je vais continuer à utiliser cet unité. J'en ai essayé d'autres et celui-ci est mon préférée."</p>
+                                <div style="display: flex; justify-content:space-between;">
+                                    <p class="r-name">Rick Douglas</p>
+                                    <div class="r-stars">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>    
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="r-imgBlock">
+                    <picture>
+                        <source media="(min-width:701px)" data-lazy="/content/images/homepage/luisporras.jpg" type="image/jpeg">
+                        <source  data-lazy="/content/images/homepage/luisporras.webp" type="image/webp">
+                        <img class="r-img" data-lazy="/content/images/homepage/luisporras.jpg">
+                    </picture>
+                    <div class="r-item  r-itemTablet">
+            
+                        <div class="r-itemTablet1">
+                           
+                            <p class="r-para">"Cela me redonne confiance
+                                Utiliser un complément capillaire de Superhairpieces me donne un sentiment de plus grande confiance, ils sont super sûrs.
+                                Personne ne va le remarquer quand ils sont de bonne qualité."</p>
+                                <div style="display: flex; justify-content:space-between;">
+                                    <p class="r-name">Luis Porras</p>
+                                    <div class="r-stars">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>    
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="r-imgBlock">
+                    <picture>
+                        <source media="(min-width:701px)" data-lazy="/content/images/homepage/scott.jpg" type="image/jpeg">
+                        <source  data-lazy="/content/images/homepage/scott.webp" type="image/webp">
+                        <img class="r-img" data-lazy="/content/images/homepage/scott.jpg">
+                    </picture>
+                    <div class="r-item  r-itemTablet">
+            
+                        <div class="r-itemTablet1">
+                            
+                            <p class="r-para">"incroyable !
+                                Je suis très heureux maintenant ! Il me donne toute la confiance du monde (non pas que je manquais) La qualité est incroyable !"</p>
+                                <div style="display: flex; justify-content:space-between;">
+                                    <p  class="r-name">Scott Henry</p>
+                                    <div class="r-stars">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>    
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="r-imgBlock">
+                    <picture>
+                        <source media="(min-width:701px)" data-lazy="/content/images/homepage/andy.jpg" type="image/jpeg">
+                        <source  data-lazy="/content/images/homepage/andy.webp" type="image/webp">
+                        <img class="r-img" data-lazy="/content/images/homepage/andy.jpg">
+                    </picture>
+                    <div class="r-item  r-itemTablet">
+            
+                        <div class="r-itemTablet1">
+                            
+                            <p class="r-para">"Cheveux et perruques de qualité incroyable ! J'adore, adore, adore ce site et ils personnalisent pour n'importe quelle longueur ou taille. Le service client est également excellent."</p>
+                            <div style="display: flex; justify-content:space-between;">
+                                <p class="r-name">Andrew Walton</p>
+    
+                                <div class="r-stars">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="r-test1" class="r-test1  reviewSlider" >
+            <a target="_blank" class=r-item href="/m101-complement-capillaire-pour-hommes-en-polyurethane-de-0-2mm/">
+                <div>
+                    <img src="https://cdn11.bigcommerce.com/s-1tqjsol232/images/stencil/200w/products/619/11215/M101FR___29553.1659039551.jpg">
+                </div>
+                <div>
+                    <div>
+                        <div class='vidujen'></div>
+                        <div class=r-name style="-webkit-box-orient: vertical">M101 Complément Capillaire Pour Hommes En Polyuréthane De 0,2mm.</div>
+                        <div class=r-price>234,00€</div>
+                    </div>
+                </div>
+            </a>
+            <a target="_blank" class=r-item href="/hd111-complement-capillaire-pour-hommes-compose-en-polyurethane-le-plus-mince-de-0-04mm-jetable/">
+                <div>
+                    <img src="https://cdn11.bigcommerce.com/s-1tqjsol232/images/stencil/200w/products/828/11534/HD111FR_Thumb__30069.1659468823.jpg">
+                </div>
+                <div>
+                    <div>
+                        <div class='vidujen'></div>
+                        <div class=r-name style="-webkit-box-orient: vertical">HD111 Complément capillaire pour hommes composé en polyuréthane le plus mince de 0,04mm - Jetable</div>
+                        <div class=r-price>228,00€</div>
+                    </div>
+                </div>
+            </a>
+            <a target="_blank" class=r-item href="/m111-complement-capillaire-pour-hommes-compose-en-polyurethane-le-plus-mince-jetable/">
+                <div>
+                    <img src="https://cdn11.bigcommerce.com/s-1tqjsol232/images/stencil/200w/products/647/11546/M111FR_Thumb__85552.1666101409.jpg">
+                </div>
+                <div>
+                    <div>
+                        <div class='vidujen'></div>
+                        <div class=r-name style="-webkit-box-orient: vertical">M111 Complément capillaire pour hommes composé en polyuréthane le plus mince - Jetable</div>
+                        <div class=r-price>226,00€</div>
+                    </div>
+                </div>
+            </a>
+            <a target="_blank" class=r-item href="/hd111-complement-capillaire-pour-hommes-compose-en-polyurethane-le-plus-mince-de-0-04mm-jetable/">
+                <div>
+                    <img src="https://cdn11.bigcommerce.com/s-1tqjsol232/images/stencil/200w/products/828/11534/HD111FR_Thumb__30069.1659468823.jpg">
+                </div>
+                <div>
+                    <div>
+                        <div class='vidujen'></div>
+                        <div class=r-name style="-webkit-box-orient: vertical">HD111 Complément capillaire pour hommes composé en polyuréthane le plus mince de 0,04mm - Jetable</div>
+                        <div class=r-price>228,00€</div>
+                    </div>
+                </div>
+            </a>
+            <a target="_blank" class=r-item href="/m105-complement-capillaire-pour-hommes-compose-totalement-en-tulle-francais/">
+                <div>
+                    <img src="https://cdn11.bigcommerce.com/s-1tqjsol232/images/stencil/200w/products/626/11369/M105FR__23937.1665068744.jpg">
+                </div>
+                <div>
+                    <div>
+                        <div class='vidujen'></div>
+                        <div class=r-name style="-webkit-box-orient: vertical">M105 Complément capillaire pour hommes composé totalement en tulle français</div>
+                        <div class=r-price>366,00€</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    
+</div>
+
+<div class="r-block2 blocktiktok">
+    <div class="r-top">
+        <h3>Suivez-nous sur Tiktok</h3>
+        <div class="r-arr"id="test123"></div>
+    </div>
+    <div class="r-content slick-tiktok1"
+    data-slick='{
+        "dots": false,
+        "arrows": true,
+        "infinite": false,
+        "lazyLoad" : "ondemand",
+        "mobileFirst": true,
+        "slidesToShow": 1,
+        "swipe": false,
+        "slidesToScroll": 1,
+        "nextArrow": "<svg  class=&apos;slick-next slick-arrow&apos; aria-label=&apos;Next Slide&apos;><use xlink:href=&apos;#slick-arrow-next&apos;></use></svg>", 
+        "prevArrow": "<svg class=&apos;slick-prev slick-arrow&apos; aria-label=&apos;Previous Slide&apos;><use xlink:href=&apos;#slick-arrow-prev&apos;></use></svg>",
+        "appendArrows": "#test123",
+        "responsive": [
+        
+            {
+                "breakpoint": 600,
+                "settings": {
+                    "slidesToShow": 2
+                }
+            },
+            {
+                "breakpoint": 1040,
+                "settings": {
+                    "slidesToShow": 3
+                }
+            },
+            {
+                "breakpoint": 1349,
+                "settings": {
+                    "slidesToShow": 4
+                }
+            }
+        ]
+        }'
+    >
+    <div id="1" class="tiktokimg" style="position: relative; margin: 0 20px; cursor: pointer;">
+        <img style="position: absolute; width:50px; top: 10px; right: 10px;" data-lazy="/content/images/marketing/reviewlanding/tiktok-logo.svg">
+
+        <img class="tiktokimg1" style="border-radius: 10px;" data-lazy="/content/images/homepage/tt1.jpg">
+        <img style="position: absolute; width:80px; top: 50%; left: 50%; transform: translate(-50%, -50%);" data-lazy="/content/images/marketing/reviewlanding/play.svg">
+
+    </div>
+    <div id="2" class="tiktokimg" style="position: relative;margin: 0 20px; cursor: pointer;">
+        <img style="position: absolute; width:50px; top: 10px; right: 10px;" data-lazy="/content/images/marketing/reviewlanding/tiktok-logo.svg">
+
+        <img class="tiktokimg1" style="border-radius: 10px;" data-lazy="/content/images/homepage/tt2.jpeg">
+        <img style="position: absolute; width:80px; top: 50%; left: 50%; transform: translate(-50%, -50%);" data-lazy="/content/images/marketing/reviewlanding/play.svg">
+
+
+    </div>
+    <div id="3" class="tiktokimg" style="position: relative;margin: 0 20px; cursor: pointer;">
+        <img style="position: absolute; width:50px; top: 10px; right: 10px;" data-lazy="/content/images/marketing/reviewlanding/tiktok-logo.svg">
+
+        <img  class="tiktokimg1" style="border-radius: 10px;" data-lazy="/content/images/homepage/tt3.jpg">
+        <img style="position: absolute; width:80px; top: 50%; left: 50%; transform: translate(-50%, -50%);" data-lazy="/content/images/marketing/reviewlanding/play.svg">
+
+
+    </div>
+    <div id="4" class="tiktokimg" style="position: relative;margin: 0 20px; cursor: pointer;">
+        <img style="position: absolute; width:50px; top: 10px; right: 10px;" data-lazy="/content/images/marketing/reviewlanding/tiktok-logo.svg">
+
+        <img  class="tiktokimg1" style="border-radius: 10px;" data-lazy="/content/images/homepage/tt4.jpg">
+        <img style="position: absolute; width:80px; top: 50%; left: 50%; transform: translate(-50%, -50%);" data-lazy="/content/images/marketing/reviewlanding/play.svg">
+
+    </div>
+    <div id="5" class="tiktokimg" style="position: relative;margin: 0 20px; cursor: pointer;">
+        <img style="position: absolute; width:50px; top: 10px; right: 10px;" data-lazy="/content/images/marketing/reviewlanding/tiktok-logo.svg">
+
+        <img  class="tiktokimg1" style="border-radius: 10px;" data-lazy="/content/images/homepage/tt5.jpg">
+        <img style="position: absolute; width:80px; top: 50%; left: 50%; transform: translate(-50%, -50%);" data-lazy="/content/images/marketing/reviewlanding/play.svg">
+
+
+    </div>
+</div>
+</div>
+
+<div class="r-block2">
+    <div class="r-top">
+        <h3>Suivez-nous sur Instagram</h3>
+        <div class="r-arr" id="test1234"></div>
+    </div>
+    <div class="r-content slick-instagram1"
+    data-slick='{
+        "dots": false,
+        "arrows": true,
+        "infinite": false,
+        "lazyLoad" : "ondemand",
+        "adaptiveHeight": true,
+        "mobileFirst": true,
+        "slidesToShow": 1,
+        "slidesToScroll": 1,
+        "nextArrow": "<svg  class=&apos;slick-next slick-arrow&apos; aria-label=&apos;Next Slide&apos;><use xlink:href=&apos;#slick-arrow-next&apos;></use></svg>", 
+        "prevArrow": "<svg class=&apos;slick-prev slick-arrow&apos; aria-label=&apos;Previous Slide&apos;><use xlink:href=&apos;#slick-arrow-prev&apos;></use></svg>",
+        "appendArrows": "#test1234",
+        "responsive": [
+        
+            {
+                "breakpoint": 600,
+                "settings": {
+                    "slidesToShow": 2
+                }
+            },
+            {
+                "breakpoint": 1040,
+                "settings": {
+                    "slidesToShow": 3
+                }
+            },
+            {
+                "breakpoint": 1349,
+                "settings": {
+                    "slidesToShow": 4
+                }
+            }
+        ]
+        }'
+    >
+    <div id="1" class="instaimg" style="position: relative; margin: 0 20px; cursor: pointer;">
+        <img style="position: absolute; width:50px; top: 10px; right: 10px;" data-lazy="/content/images/homepage/Instagram-Logo.svg">
+
+        <img  style="height: 280px; object-fit:cover; width: 100%; border-radius: 10px;" data-lazy="/content/images/homepage/insta1-min.jpg" alt="instagram-video-1">
+
+
+
+    </div>
+    <div id="2" class="instaimg" style="position: relative;margin: 0 20px; cursor: pointer;">
+        <img style="position: absolute; width:50px; top: 10px; right: 10px;" data-lazy="/content/images/homepage/Instagram-Logo.svg">
+
+        <img  style="height: 280px; object-fit:cover;width: 100%; border-radius: 10px;" data-lazy="/content/images/homepage/insta2-min.jpg" alt="instagram-video-2">
+
+
+
+
+    </div>
+    <div id="3" class="instaimg" style="position: relative;margin: 0 20px; cursor: pointer;">
+        <img style="position: absolute; width:50px; top: 10px; right: 10px;" data-lazy="/content/images/homepage/Instagram-Logo.svg">
+
+        <img  style="height: 280px; object-fit:cover;width: 100%; border-radius: 10px;" data-lazy="/content/images/homepage/insta3-min.jpg" alt="instagram-video-3">
+
+
+
+
+    </div>
+    <div id="4" class="instaimg" style="position: relative;margin: 0 20px; cursor: pointer;">
+        <img style="position: absolute; width:50px; top: 10px; right: 10px;" data-lazy="/content/images/homepage/Instagram-Logo.svg">
+
+        <img  style="height: 280px; object-fit:cover;width: 100%; border-radius: 10px;" data-lazy="/content/images/homepage/insta4-min.jpg" alt="instagram-video-4">
+
+
+
+    </div>
+    <div id="5" class="instaimg" style="position: relative;margin: 0 20px; cursor: pointer;">
+        <img style="position: absolute; width:50px; top: 10px; right: 10px;" data-lazy="/content/images/homepage/Instagram-Logo.svg">
+
+        <img  style="height: 280px; object-fit:cover;width: 100%; border-radius: 10px;" data-lazy="/content/images/homepage/insta5-min.jpg" alt="instagram-video-5">
+
+
+
+
+    </div>
+
+    </div>
+</div>
+<div class="v-video-modal">     
+<div class="v-video-modal-overlay"></div>
+<div class="v-video-container">
+    <div class="v-video-modal-close"></div>
+</div>
+</div>
+
+
+<script>
+    window.addEventListener('DOMContentLoaded', function() {
+    $('.tiktokimg').on('click', function() {
+    $(".tiktok-embed").remove();
+    let getID = this.id
+    const tiktoks = [`        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@superhairpieces_france/video/7165933287817399558" data-video-id="7165933287817399558" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@superhairpieces_france" href="https://www.tiktok.com/@superhairpieces_france?refer=embed">@superhairpieces_france</a> Laissez-nous faire <a title="toupet" target="_blank" href="https://www.tiktok.com/tag/toupet?refer=embed">#toupet</a> <a title="complementcapillaire" target="_blank" href="https://www.tiktok.com/tag/complementcapillaire?refer=embed">#complementcapillaire</a> <a title="transformationcheveux" target="_blank" href="https://www.tiktok.com/tag/transformationcheveux?refer=embed">#transformationcheveux</a> <a title="calvitie" target="_blank" href="https://www.tiktok.com/tag/calvitie?refer=embed">#calvitie</a> <a title="pertedecheveux" target="_blank" href="https://www.tiktok.com/tag/pertedecheveux?refer=embed">#pertedecheveux</a> <a title="chauve" target="_blank" href="https://www.tiktok.com/tag/chauve?refer=embed">#chauve</a> <a title="avantapres" target="_blank" href="https://www.tiktok.com/tag/avantapres?refer=embed">#avantapres</a> <a target="_blank" title="♬ son original - SPEEDSONG" href="https://www.tiktok.com/music/son-original-7158445600789891846?refer=embed">♬ son original - SPEEDSONG</a> </section> </blockquote> <script class=tiktokscript async src="https://www.tiktok.com/embed.js"><\/script>
+`,
+        `                           <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@superhairpieces_france/video/7138061342036069638" data-video-id="7138061342036069638" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@superhairpieces_france" href="https://www.tiktok.com/@superhairpieces_france?refer=embed">@superhairpieces_france</a> Aujourd&#39;hui, nous avons accueilli Raquel, qui a obtenu un nouveau postiche après 3 ans. Elle porte notre postiche Queen 18 en couleur #8 <a title="8" target="_blank" href="https://www.tiktok.com/tag/8?refer=embed">Ac</a>hetez le vôtre à Superhairpieces France et bénéficier de la livraison gratuite avec l’achat d’un prothèse capillaire. Disponible pour un temps limité. #volumat<a title="volumateur" target="_blank" href="https://www.tiktok.com/tag/volumateur?refer=embed">eur #avanta</a>p<a title="avantapres" target="_blank" href="https://www.tiktok.com/tag/avantapres?refer=embed">res #coiffu</a>r<a title="coiffure" target="_blank" href="https://www.tiktok.com/tag/coiffure?refer=embed">e #couped</a>e<a title="coupedecheveux" target="_blank" href="https://www.tiktok.com/tag/coupedecheveux?refer=embed">cheveux #belle </a>#<a title="belle" target="_blank" href="https://www.tiktok.com/tag/belle?refer=embed">eclair</a>c<a title="eclaircissement" target="_blank" href="https://www.tiktok.com/tag/eclaircissement?refer=embed">issement</a> <a target="_blank" title="♬ son original - cam’" href="https://www.tiktok.com/music/son-original-6999616444136753925?refer=embed">♬ son original - cam’</a> </section> </blockquote> <script class=tiktokscript async src="https://www.tiktok.com/embed.js"><\/script>`,
+            `
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@superhairpieces_france/video/7140653980773879045" data-video-id="7140653980773879045" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@superhairpieces_france" href="https://www.tiktok.com/@superhairpieces_france?refer=embed">@superhairpieces_france</a> Complément capillaire = machine à remonter le temps magique <a title="complementcapillaire" target="_blank" href="https://www.tiktok.com/tag/complementcapillaire?refer=embed">#complementcapillaire</a> <a title="avantapres" target="_blank" href="https://www.tiktok.com/tag/avantapres?refer=embed">#avantapres</a> <a title="tutorielfrançais" target="_blank" href="https://www.tiktok.com/tag/tutorielfran%C3%A7ais?refer=embed">#tutorielfrançais</a> <a title="coupedecheveux" target="_blank" href="https://www.tiktok.com/tag/coupedecheveux?refer=embed">#coupedecheveux</a> <a title="remonterletemps" target="_blank" href="https://www.tiktok.com/tag/remonterletemps?refer=embed">#remonterletemps</a> <a target="_blank" title="♬ TEGP - Tête épaule genou pied - Manns" href="https://www.tiktok.com/music/TEGP-Tête-épaule-genou-pied-7133394597887084546?refer=embed">♬ TEGP - Tête épaule genou pied - Manns</a> </section> </blockquote> <script class=tiktokscript async src="https://www.tiktok.com/embed.js"><\/script>`, 
+        `
+    
+        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@superhairpieces_france/video/7132137518601964805" data-video-id="7132137518601964805" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@superhairpieces_france" href="https://www.tiktok.com/@superhairpieces_france?refer=embed">@superhairpieces_france</a> Il n&#39;est jamais trop tard pour retrouver votre confiance avec un complément capillaire.Bénéficier de la livraison gratuite sur Superhairpieces.fr avec l’achat d’un prothèse capillaire. Disponible pour un temps limité. <a title="transformation" target="_blank" href="https://www.tiktok.com/tag/transformation?refer=embed">#transformation</a> <a title="complementcapillaire" target="_blank" href="https://www.tiktok.com/tag/complementcapillaire?refer=embed">#complementcapillaire</a> <a title="pertedecheveux" target="_blank" href="https://www.tiktok.com/tag/pertedecheveux?refer=embed">#pertedecheveux</a> <a title="complementcapillaire" target="_blank" href="https://www.tiktok.com/tag/complementcapillaire?refer=embed">#complementcapillaire</a> <a title="pourleshommes" target="_blank" href="https://www.tiktok.com/tag/pourleshommes?refer=embed">#pourleshommes</a> <a title="france" target="_blank" href="https://www.tiktok.com/tag/france?refer=embed">#france</a> <a target="_blank" title="♬ Carrying Your Love - David Morris" href="https://www.tiktok.com/music/Carrying-Your-Love-7099193160047265793?refer=embed">♬ Carrying Your Love - David Morris</a> </section> </blockquote> <script class=tiktokscript async src="https://www.tiktok.com/embed.js"><\/script>    `, `
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@superhairpieces_france/video/7154371340886101254" data-video-id="7154371340886101254" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@superhairpieces_france" href="https://www.tiktok.com/@superhairpieces_france?refer=embed">@superhairpieces_france</a> Curieux de savoir comment fonctionne l&#39;entretien d&#39;un prothèse capillaire ?  Continuer de regarder <a title="cheveuxhumains" target="_blank" href="https://www.tiktok.com/tag/cheveuxhumains?refer=embed">#cheveuxhumains</a> <a title="transformation" target="_blank" href="https://www.tiktok.com/tag/transformation?refer=embed">#transformation</a> <a title="remy" target="_blank" href="https://www.tiktok.com/tag/remy?refer=embed">#remy</a> <a title="calvitie" target="_blank" href="https://www.tiktok.com/tag/calvitie?refer=embed">#calvitie</a> <a title="cheveux" target="_blank" href="https://www.tiktok.com/tag/cheveux?refer=embed">#cheveux</a> <a title="greffedecheveux" target="_blank" href="https://www.tiktok.com/tag/greffedecheveux?refer=embed">#greffedecheveux</a> <a title="greffecapillaire" target="_blank" href="https://www.tiktok.com/tag/greffecapillaire?refer=embed">#greffecapillaire</a> <a target="_blank" title="♬ son original - MMB" href="https://www.tiktok.com/music/son-original-7146685329628613381?refer=embed">♬ son original - MMB</a> </section> </blockquote> <script class=tiktokscript async src="https://www.tiktok.com/embed.js"><\/script>`]
+
+        $(".v-video-container").prepend(`${tiktoks[getID-1]}`)                
+        $(".v-video-modal").addClass("show");
+
+})
+$('.instaimg').on('click', function() {
+    $(".instablock").remove();
+    let getID = this.id
+    const tiktoks = [`
+    <div class='instablock'>
+    <iframe src="https://www.instagram.com/p/CgfFDiyjyU1/embed" width="100%" height="100%" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+
+    </div>        
+`,`   
+<div class='instablock'>                        
+<iframe src="https://www.instagram.com/p/CkYv-1BN3GG/embed" width="100%" height="100%" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+</div>
+            `,`
+            <div class='instablock'>
+            <iframe src="https://www.instagram.com/p/CktLGZjNbbk/embed" width="100%" height="100%" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+            </div>
+                `, `
+                <div class='instablock'>
+                <iframe src="https://www.instagram.com/p/Ck_JwjwNT1L/embed" width="100%" height="100%" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                </div>
+            `, `
+            <div class='instablock'>
+            <iframe src="https://www.instagram.com/p/CkyZOE9NK0o/embed" width="100%" height="100%" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+            </div>
+                `]
+        $(".v-video-container").prepend(`${tiktoks[getID-1]}`)                
+        $(".v-video-modal").addClass("show");
+
+})
+$(".v-video-modal-overlay, .v-video-modal-close").on("click", function() {
+    $('.tiktokscript').remove()
+    $(".v-video-modal").removeClass("show");
+    $(".tiktok-embed").remove();
+    $(".instablock").remove();
+
+})
+
+})
+
+
+</script>
