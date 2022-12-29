@@ -748,7 +748,7 @@
                     {{#if product.options}}
                         <div class="productView-optionsLabel">{{lang 'products.choose_options'}}:</div>
                     {{/if}}
-                    <div data-product-option-change style="display:none;">
+                    <div data-product-option-change >
                         {{#each product.options}}
                             {{{dynamicComponent 'components/products/options'}}}
                         {{/each}}

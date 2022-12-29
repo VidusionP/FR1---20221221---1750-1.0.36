@@ -314,9 +314,12 @@ export default class ProductDetails {
             const productAttributesData = response.data || {};
             this.$productAttributesData = productAttributesData;
             const productAttributesContent = response.content || {};
-            this.updateProductAttributes(productAttributesData);
+            this.updateProductAttributes(productAttributesData, event);
             this.updateView(this.$scope, productAttributesData, productAttributesContent);
             this.updateDeliverTime(productAttributesData);
+            if ($(window).width() < 992) {
+                this.updateThumbnailView(productAttributesData, event)
+            }
         });
     }
 
@@ -1209,12 +1212,12 @@ export default class ProductDetails {
      * Hide or mark as unavailable out of stock attributes if enabled
      * @param  {Object} data Product attribute data
      */
-    updateProductAttributes(data) {
+    updateProductAttributes(data, event) {
         const behavior = data.out_of_stock_behavior;
         const inStockIds = data.in_stock_attributes;
         const outOfStockMessage = ` (${data.out_of_stock_message})`;
 
-        this.showProductImage(data.image);
+        this.showProductImage(data.image, event);
 
         if (behavior !== 'hide_option' && behavior !== 'label_option') {
             return;
@@ -1232,7 +1235,28 @@ export default class ProductDetails {
             }
         });
     }
-
+    updateThumbnailView(data, event) {
+        const image1 = data.image
+        const e = event.target
+        console.log(e)
+        if (image1) {
+            $('.thumbnail-image').remove()
+            const mainImageUrl = utils.tools.image.getSrc(
+                image1.data,
+                this.context.themeSettings.gallery_size,
+            );
+            $(e).parent().append(`
+                <div class="thumbnail-image">
+                <img style=" max-width: 250px; " src=${mainImageUrl}>
+                </div>
+            `)
+          
+        $('.container').on('click', function() {
+            $('.thumbnail-image').remove()
+            
+        })
+        }
+    }
     disableAttribute($attribute, behavior, outOfStockMessage) {
         if (this.getAttributeType($attribute) === 'set-select') {
             return this.disableSelectOptionAttribute($attribute, behavior, outOfStockMessage);
