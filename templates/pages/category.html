@@ -41,12 +41,7 @@ products:
 
         <div class="page-header">
             <h1 class="page-heading">{{category.name}}</h1>
-            {{#if category.description}}
-                <div class="page-description">
-                    {{{category.description}}}
-                </div>
-            {{/if}}
-            {{{region name="category_below_header"}}}
+
         </div>
 
         {{#if theme_settings.halo-category-sidebar}}
@@ -62,6 +57,12 @@ products:
         {{/if}}
 
         <main class="page-content" id="product-listing-container">
+            {{#if category.description}}
+                <div class="page-description">
+                    {{{category.description}}}
+                </div>
+            {{/if}}
+            {{{region name="category_below_header"}}}
             <div class="halo-toolbar">
                 {{#if theme_settings.halo-category-sidebar}}
                     <div class="page-sidebar-mobile-wrapper">
