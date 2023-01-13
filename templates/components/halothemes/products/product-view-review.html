@@ -145,6 +145,14 @@
         font-size: 18px;
         gap: 10px;
     }
+    .pageButtonsEU {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 18px;
+        gap: 10px;
+        display: ;
+    }
     .pageButton {
         margin-bottom: 10px;
         padding-right: 15px;
@@ -153,12 +161,18 @@
         border-bottom: 1px solid #eee;
         /* margin-bottom: 50px; */
         margin-top: 50px;
+        display: flex;
+        gap: 20px;
     }
     .productReview-main-box {
         padding: 20px 0;
         border-bottom: 3px solid black;
         width: fit-content;
         font-weight: 700;
+        cursor: pointer;
+    }
+    .productReview-main-box.non-active {
+        border-bottom: 3px solid rgba(0, 0, 0, 0.212);
 
     }
     .productReview-media {
@@ -195,6 +209,9 @@
         border: 1px solid #ccd6e0!important;
         border-radius: 4px;
         max-width: 500px;
+    }
+    .productReview-input.non-active {
+        display: none;
     }
 @media(min-width: 551px){
         .productReview-top{
@@ -241,7 +258,10 @@
         background-repeat: no-repeat;
         width: 200px; 
         border: 1px solid #eee;
-        border-top: none;
+        margin-top: 10px;
+    }
+    .productReview-select.non-active {
+        display: none;
     }
     .pageButton1 {
         display: none;
@@ -251,6 +271,12 @@
     }
     .pageButton-arr2 {
         padding-left: 10px;
+    }
+    @media (min-width: 500px) {
+        .productReview-select {
+            border-top: none;
+            margin-top: 0;
+        }
     }
 </style>
 
@@ -270,33 +296,42 @@
     <div class="productReview-top-middle"></div>
     <div class="productReview-main" id="productReview-main"></div>
     <div style="text-align: end;">
-        <select class="productReview-select" id="mySelect" onchange="sortOption()">
+        <select class="productReview-select selectAll" onchange="sortOption(review3[0])">
             <option hidden>{{lang 'products.reviews.sort.sort'}}</option>
             <option value="Most Recent">{{lang 'products.reviews.sort.recent'}}</option>
             <option value="With Photos">{{lang 'products.reviews.sort.photos'}}</option>
             <option value="Highest Rating">{{lang 'products.reviews.sort.high'}}</option>
             <option value="Lowest Rating">{{lang 'products.reviews.sort.low'}}</option>
-
-        </select>    
+        </select>
+        <select class="productReview-select selectEU non-active" onchange="sortOption(euFilter)">
+            <option hidden>{{lang 'products.reviews.sort.sort'}}</option>
+            <option value="Most Recent">{{lang 'products.reviews.sort.recent'}}</option>
+            <option value="With Photos">{{lang 'products.reviews.sort.photos'}}</option>
+            <option value="Highest Rating">{{lang 'products.reviews.sort.high'}}</option>
+            <option value="Lowest Rating">{{lang 'products.reviews.sort.low'}}</option>
+        </select>       
     </div>
     <div class="productReview-search">
-        <input class="productReview-input" type="text" id="myInput" onkeyup='reviewBody(review3[0])' placeholder="{{lang 'products.reviews.search'}}">
+        <input class="productReview-input inputAll" type="text" id="myInput" onkeyup='reviewBody(review3[0])' placeholder="{{lang 'products.reviews.search'}}">
+        <input class="productReview-input inputEU non-active" type="text" id="myInput1" onkeyup='reviewBody(euFilter)' placeholder="{{lang 'products.reviews.search'}}">
     </div>
     <div class="pageItems" id="pageItems"></div>
+    <div class="pageItemsEU" id="pageItemsEU"></div>
     <div class="pageButtons" id="pageButtons">
         <div class="pageButton-arr1" id="pageButton-arr1"><</div>
         <div class="pageButton-main" id="pageButton-main"></div>
         <div class="pageButton-arr2" id="pageButton-arr2">></div>
     </div>
+
 </div>
 <script>
     // import {$,jQuery} from 'jquery';
 
-    function sortOption() {
-        let x = document.getElementById('mySelect').value
+    function sortOption(arr) {
+        let x = event.target.value
 
         if ( x === 'Highest Rating') {
-            const sortArr = review3[0].sort((a,b) => {
+            const sortArr = arr.sort((a,b) => {
             return b['Review rate'] - a['Review rate']
         })
         // arrow2.removeEventListener('click', checkTest1)
@@ -304,21 +339,21 @@
 
         }
         else if ( x === 'Lowest Rating') {
-            const sortArr = review3[0].sort((a,b) => {
+            const sortArr = arr.sort((a,b) => {
             return a['Review rate'] - b['Review rate']
         })
         reviewBody(sortArr)
 
         }
         else if ( x === 'Most Recent') {
-            const sortArr = review3[0].sort((a,b) => {
+            const sortArr = arr.sort((a,b) => {
                 return new Date(b['Date Created1']) - new Date(a['Date Created1'])
         })
         reviewBody(sortArr)
 
         }
         else if ( x === 'With Photos') {
-            const sortArr = review3[0].sort((a,b) => {
+            const sortArr = arr.sort((a,b) => {
                 return b['Review images'] === null || "" ? -1 : 1
         })
         reviewBody(sortArr)
@@ -329,6 +364,7 @@
 
     let review2 = []
     let filteredAr1 =[]
+    let euFilter = []
     let imageRoll = []
     let videoRoll = []
     let review3 = []
@@ -356,8 +392,9 @@
      function main() {
         input1 = document.getElementById("productReview-sepa");
         input1.innerHTML = '';
-        // $('.productReview-sepa').append('')
         input = document.getElementById("myInput");
+        
+        // $('.productReview-sepa').append('')
 
         Promise.all([
             fetch("https://www.teamdesk.net/secure/api/v2/56554/BEA2566590EF4D14AA8D35AD0E2CEA77/Review/select.json").then(r => r.json()).then(r=>{
@@ -374,85 +411,54 @@
                               review2.push(...r)}),
           ])
 .then((r) => {
-        const filteredAr = review2.filter(item => item['Product SKU'] === aList)
-    filteredAr.forEach((item) => {
+        const filteredAr = review2.filter(item => item['Product SKU'] === aList);
+        const sortArr = filteredAr.sort((a,b) => {
+            return new Date(b['Date Created1']) - new Date(a['Date Created1'])
+        })
+        sortArr.forEach((item) => {
         filteredAr1.push(item)
+        let loca = item['location']
+        if (loca == 'Netherlands' 
+        || loca == 'Norway' 
+        || loca == 'Denmark' 
+        || loca == 'Belgium' 
+        || loca == 'United Kingdom' 
+        || loca == 'Italy'
+        || loca == 'Ireland'
+        || loca == 'Germany'
+        || loca == 'Spain'
+        || loca == 'France') {
+            euFilter.push(item)
+        }
     }) 
-    const sortedArr9 = filteredAr.reduce((acc, element) => {
-    if (element['location'] === 'Netherlands') {
-    return [element, ...acc];
-  } 
-  return [...acc, element];
 
-}, []);
-const sortedArr8 = sortedArr9.reduce((acc, element) => {
-    if (element['location'] === 'Norway') {
-    return [element, ...acc];
-  } 
-  return [...acc, element];
+review3.push(sortArr);
 
-}, []);
-const sortedArr7 = sortedArr8.reduce((acc, element) => {
-    if (element['location'] === 'Denmark') {
-    return [element, ...acc];
-  } 
-  return [...acc, element];
+    reviewTop();
+    reviewBody(sortArr);
 
-}, []);
-const sortedArr6 = sortedArr7.reduce((acc, element) => {
-    if (element['location'] === 'Belgium') {
-    return [element, ...acc];
-  } 
-  return [...acc, element];
+    $('.productReview-all').on('click', function() {
+        input = document.getElementById("myInput");
+        $('.productReview-input.inputEU').addClass('non-active');
+        $('.productReview-input.inputAll').removeClass('non-active');
+        $('.productReview-select.selectAll').removeClass('non-active');
+        $('.productReview-select.selectEU').addClass('non-active');
+        $('.productReview-all').removeClass('non-active');
+        reviewBody(sortArr);
+        $('.productReview-EU').addClass('non-active');
+    })
+    $('.productReview-EU').on('click', function() {
+        input = document.getElementById("myInput1");
 
-}, []);
-    const sortedArr5 = sortedArr6.reduce((acc, element) => {
-    if (element['location'] === 'United Kingdom') {
-    return [element, ...acc];
-  } 
-  return [...acc, element];
+        $('.productReview-input.inputEU').removeClass('non-active');
+        $('.productReview-input.inputAll').addClass('non-active');
+        $('.productReview-select.selectAll').addClass('non-active');
+        $('.productReview-select.selectEU').removeClass('non-active');
+        $('.productReview-EU').removeClass('non-active');
+        reviewBody(euFilter);
+        $('.productReview-all').addClass('non-active')
 
-}, []);
-const sortedArr4 = sortedArr5.reduce((acc, element) => {
-    if (element['location'] === 'Italy') {
-    return [element, ...acc];
-  } 
-  return [...acc, element];
-
-}, []);
-const sortedArr3 = sortedArr4.reduce((acc, element) => {
-    if (element['location'] === 'Ireland') {
-    return [element, ...acc];
-  } 
-  return [...acc, element];
-
-}, []);
-const sortedArr2 = sortedArr3.reduce((acc, element) => {
-    if (element['location'] === 'Germany') {
-    return [element, ...acc];
-  } 
-  return [...acc, element];
-
-}, []);
-const sortedArr1 = sortedArr2.reduce((acc, element) => {
-    if (element['location'] === 'Spain') {
-    return [element, ...acc];
-  } 
-  return [...acc, element];
-
-}, []);
-const sortedArr = sortedArr1.reduce((acc, element) => {
-    if (element['location'] === 'France') {
-    return [element, ...acc];
-  } 
-  return [...acc, element];
-
-}, []);
-review3.push(sortedArr)
-    reviewTop()
-    reviewBody(sortedArr)
-
-
+    })
     
 
 })
@@ -467,19 +473,13 @@ review3.push(sortedArr)
 function reviewBody(sortedArr) {
     let input2 = document.getElementById("pageButton-main");
     input2.innerHTML = '';
-
     const filteredArr = sortedArr.filter(letterV => {
         if (letterV['Review body']) {
             return letterV['Review body'].toLowerCase().includes(input.value.toLowerCase())
-
         }
     }
- 
-
     )
-
-
-    var pages = paginate(8, filteredArr);
+var pages = paginate(8, filteredArr);
 
 function paginate(n, filteredAr1) {
     return divide(n, filteredAr1).map(function (items, index) {
@@ -517,9 +517,7 @@ appendChildren(buttons, pages.map(function (page, index) {
 
     if (index > 4) {
     button.setAttribute("class", 'pageButton pageButton1')
-
     }
-
     if (index === 0) {
 
         button.setAttribute("class", 'pageButton active')
@@ -635,6 +633,7 @@ function divide(n, filteredAr1) {
     } else return [];
 }
 }
+
 function reviewTop() {
     filteredAr1.map(element => reviewRate.push(element['Review rate']))
     filteredAr1.map(element => element['Review images'] === null ? 
@@ -672,10 +671,13 @@ function reviewTop() {
     )
     $(".productReview-main").append(
         `
-        <div class='productReview-main-box'>
+        <div class='productReview-main-box productReview-all'>
             {{lang 'products.reviews.reviewNum' num='${filteredAr1.length}'}}
         </div>
+        <div class='productReview-main-box non-active productReview-EU'>
+            {{lang 'products.reviews.reviewNumEU' num1='${euFilter.length}'}}
 
+        <div>
         `
     )
     $('.productReview-sepa').append(
